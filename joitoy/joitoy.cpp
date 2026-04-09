@@ -727,10 +727,13 @@ void HandleEvents() {
 }
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    SetConsoleOutputCP(65001);  // UTF-8 для вывода
+    SetConsoleCP(65001);         // UTF-8 для ввода
+    setlocale(LC_ALL, "ru_RU.UTF-8");
 
+    // SetConsoleOutputCP(1251);
+    // SetConsoleCP(1251);
+    // setlocale(LC_ALL, "Russian");
    // Авторизация
     if (!LOGIN_IN()) {
         cout << "\nПрограмма завершена.\n";
